@@ -1,0 +1,57 @@
+site_name: "torchlogic"
+repo_url: "<path/to/repo>"
+docs_dir: 'docs'
+
+nav:
+- Welcome:
+    - Overview: 'index.md'
+    - Installation: 'install/install.md'
+    - Tutorials:
+        - Bandit-RRN: 'tutorials/brn.md'
+- Data Science:
+    - torchlogic Overview: 'ds/overview.md'
+    - Neural Reasoning Networks: 'ds/rn.md'
+    - Bandit-NRN Algorithm: 'ds/brn.md'
+    - Use Cases in AI Workflows: 'ds/usecases.md'
+- API Reference:
+    - nn: 'reference/nn.md'
+    - modules: 'reference/modules.md'
+    - models: 'reference/models.md'
+    - utils: 'reference/utils.md'
+
+theme:
+    name: material
+    language: en
+    logo: static/torchlogic_logo_black.png
+
+plugins:
+    - search
+    - git-revision-date
+    - autorefs
+    - mkdocstrings:
+            default_handler: python
+            handlers:
+                python:
+                    setup_commands:
+                        - import sys
+                        - sys.path.append("./torchlogic")
+
+markdown_extensions:
+    - admonition
+    - attr_list
+    - def_list
+    - pymdownx.tasklist:
+            custom_checkbox: true
+    - pymdownx.emoji
+    - pymdownx.magiclink
+    - pymdownx.snippets:
+        check_paths: true
+    - pymdownx.superfences:
+    - pymdownx.tabbed
+    - pymdownx.tasklist
+    - mkdocs-click
+    - pymdownx.details
+    - footnotes
+
+extra_css:
+    - 'formatting/extra.css'

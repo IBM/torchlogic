@@ -1,0 +1,68 @@
+/** Below is the CIO CSS Theme **/
+
+/* Indentation for mkdocstrings items. */
+div.doc-contents:not(.first) {
+    padding-left: 25px;
+    border-left: 4px solid rgba(230, 230, 230);
+    margin-bottom: 80px;
+  }
+
+  nav.md-nav.md-nav--secondary {
+      font-size: 14px;
+      color: #77757a;
+      background-color: #f5f7fa;
+    }
+
+  body > div > main > div > div.md-sidebar.md-sidebar--primary > div > div > nav > label {
+    background-color: #252525
+  }
+
+  .md-typeset ul {
+    margin-top: 2px;
+    margin-bottom: 3px;
+  }
+
+  .md-typeset ul li { margin-bottom: 1px ; }
+
+  body > div > main > div > div.md-sidebar.md-sidebar--primary > div > div > nav > label > a > i {
+    display: none;
+  }
+
+  body > div > main > div > div.md-sidebar.md-sidebar--primary > div > div > nav > label {
+    background-color: #fff;
+  }
+
+  a.md-header-nav__button.md-logo {
+    display: none;
+  }
+
+  nav.md-nav.md-nav--primary{
+    font-size: 16.5px;
+  }
+
+  body {
+    background-color: #fff;
+    font-family: "PlexSans", Source Sans Pro, Helvetica Neue, Arial, sans-serif;
+    font-size: 15px;
+  }
+
+  .md-header {
+    background-color: #252525
+  }
+
+  body > div > main > div > div.md-sidebar.md-sidebar--secondary > div > div > nav > label {
+    visibility: hidden;
+  }
+
+  body > div > main > div > div.md-sidebar.md-sidebar--secondary > div > div > nav > label:after {
+    content:'Topic contents';
+    visibility: visible;
+    display: block;
+    position: absolute;
+    top: 0.001px;
+    padding-top: 28px;
+  }
+
+  body > div > footer > div.md-footer-meta.md-typeset > div > div {
+    visibility: hidden;
+  }

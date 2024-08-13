@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "cao-exps"
+version = "0.1.0"
+description = ""
+authors = ["Your Name <you@example.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+openml = "^0.14.1"
+torch = "^2.1.0"
+xgboost = "^2.0.2"
+cvxpy-base = "1.4.1"
+cvxopt = "1.3.2"
+aix360 = "^0.3.0"
+optuna = "^3.3.0"
+qhoptim = "^1.1.0"
+tensorflow = "2.15.0"
+yacs = "0.1.8"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

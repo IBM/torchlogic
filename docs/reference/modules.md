@@ -1,0 +1,1 @@
+::: torchlogic.modules.BanditNRNModule
