@@ -152,7 +152,10 @@ class ReasoningNetworkRegressorMixin(BaseReasoningNetworkMixin):
             inverse_transform_target=None,
             show_bounds: bool = True,
             simplify: bool = False,
-            exclusions: list[str] = None
+            exclusions: list[str] = None,
+            min_max_feature_dict: dict = None,
+            feature_importances: bool = False,
+            feature_importances_type: str = 'weight'
     ) -> str:
         """
         Produce a sample explanation.
@@ -266,14 +269,24 @@ class ReasoningNetworkRegressorMixin(BaseReasoningNetworkMixin):
             if inverse_transform_target is not None:
                 prediction_value = inverse_transform_target(prediction_value.reshape(1, -1))
 
-            explanation_str = simplification(
-                explanation_str,
-                print_type,
-                simplify,
-                sample_level=True,
-                ndigits=rounding_precision,
-                exclusions=exclusions
-            )
+            if print_type in ['logical', 'logical-natural'] or feature_importances:
+                explanation_tree = simplification(
+                    explanation_str,
+                    print_type,
+                    simplify=simplify,
+                    sample_level=True,
+                    ndigits=rounding_precision,
+                    exclusions=exclusions,
+                    min_max_feature_dict=min_max_feature_dict,
+                    feature_importances=feature_importances,
+                    verbose=False  # TODO use False when done testing
+                )
+                explanation_str = explanation_tree.tree_to_string()
+
+                if feature_importances:
+                    importances_dict = {}
+                    self._feature_importances = explanation_tree.get_feature_importances(importances_dict=importances_dict)
+
             explanation += [
                 f"{i}: {sample_explanation_prefix} "
                 f"a predicted {target_names[0]} "
