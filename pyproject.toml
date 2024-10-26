@@ -18,6 +18,9 @@ pytorch_optimizer = "^2.12.0"
 torchvision = "^0.16"
 xgboost = "^2.0.2"
 setuptools = "^69.0.2"
+aix360 = "^0.3.0"
+minepy = "^1.2.6"
+cvxpy = "^1.5.3"
 
 [build-system]
 requires = ["poetry-core"]
